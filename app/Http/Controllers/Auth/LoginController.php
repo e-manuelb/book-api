@@ -24,7 +24,7 @@ class LoginController
         $serviceResponse = $this->loginService->handle($request->validated());
 
         if ($serviceResponse == "Invalid credentials.") {
-            return response()->json(['message' => "Invalid credentials."], Response::HTTP_UNPROCESSABLE_ENTITY);
+            return response()->json(['message' => $serviceResponse], Response::HTTP_UNPROCESSABLE_ENTITY);
         } else {
             return response()->json(['token' => $serviceResponse]);
         }

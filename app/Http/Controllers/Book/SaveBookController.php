@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Book;
 
+use App\Domain\Features\Book\SaveBook;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Book\SaveBookRequest;
 use App\Http\Resources\BookResource;
-use App\Services\Book\SaveBookService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
 class SaveBookController extends Controller
 {
-    private SaveBookService $saveBookService;
+    private SaveBook $saveBookService;
 
     /**
-     * @param SaveBookService $saveBookService
+     * @param SaveBook $saveBookService
      */
-    public function __construct(SaveBookService $saveBookService)
+    public function __construct(SaveBook $saveBookService)
     {
         $this->saveBookService = $saveBookService;
     }

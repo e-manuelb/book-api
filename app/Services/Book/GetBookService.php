@@ -2,10 +2,11 @@
 
 namespace App\Services\Book;
 
+use App\Domain\Features\Book\GetBook;
 use App\Models\Book;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 
-class GetBookService
+class GetBookService implements GetBook
 {
     private BookRepositoryInterface $bookRepository;
 

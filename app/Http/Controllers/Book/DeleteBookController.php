@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Book;
 
+use App\Domain\Features\Book\DeleteBook;
 use App\Services\Book\DeleteBookService;
 use App\Services\Book\GetBookService;
 use Exception;
@@ -10,12 +11,12 @@ use Illuminate\Http\Response;
 
 class DeleteBookController
 {
-    private DeleteBookService $deleteBookService;
+    private DeleteBook $deleteBookService;
 
     /**
-     * @param DeleteBookService $deleteBookService
+     * @param DeleteBook $deleteBookService
      */
-    public function __construct(DeleteBookService $deleteBookService)
+    public function __construct(DeleteBook $deleteBookService)
     {
         $this->deleteBookService = $deleteBookService;
     }

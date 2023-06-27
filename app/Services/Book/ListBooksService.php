@@ -2,10 +2,11 @@
 
 namespace App\Services\Book;
 
+use App\Domain\Features\Book\ListBooks;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
-class ListBooksService
+class ListBooksService implements ListBooks
 {
     private BookRepositoryInterface $bookRepository;
 
@@ -17,7 +18,7 @@ class ListBooksService
         $this->bookRepository = $bookRepository;
     }
 
-    public function list(): Collection|array
+    public function handle(): Collection|array
     {
         return $this->bookRepository->findAll();
     }

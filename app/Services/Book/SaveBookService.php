@@ -2,10 +2,11 @@
 
 namespace App\Services\Book;
 
+use App\Domain\Features\Book\SaveBook;
 use App\Models\Book;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 
-class SaveBookService
+class SaveBookService implements SaveBook
 {
     private BookRepositoryInterface $bookRepository;
 

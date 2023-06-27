@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Domain\Features\Auth\Login;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Services\Auth\LoginService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
 class LoginController
 {
-    private LoginService $loginService;
+    private Login $loginService;
 
     /**
-     * @param LoginService $loginService
+     * @param Login $loginService
      */
-    public function __construct(LoginService $loginService)
+    public function __construct(Login $loginService)
     {
         $this->loginService = $loginService;
     }

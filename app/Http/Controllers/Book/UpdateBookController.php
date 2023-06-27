@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Book;
 
+use App\Domain\Features\Book\UpdateBook;
 use App\Http\Requests\Book\UpdateBookRequest;
 use App\Http\Resources\BookResource;
-use App\Services\Book\UpdateBookService;
 use Illuminate\Http\JsonResponse;
 
 class UpdateBookController
 {
-    private UpdateBookService $updateBookService;
+    private UpdateBook $updateBookService;
 
     /**
-     * @param UpdateBookService $updateBookService
+     * @param UpdateBook $updateBookService
      */
-    public function __construct(UpdateBookService $updateBookService)
+    public function __construct(UpdateBook $updateBookService)
     {
         $this->updateBookService = $updateBookService;
     }

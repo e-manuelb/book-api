@@ -2,10 +2,11 @@
 
 namespace App\Services\Book;
 
+use App\Domain\Features\Book\DeleteBook;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use Exception;
 
-class DeleteBookService
+class DeleteBookService implements DeleteBook
 {
     private BookRepositoryInterface $bookRepository;
 

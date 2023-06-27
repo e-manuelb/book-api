@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Book;
 
+use App\Domain\Features\Book\ListBooks;
 use App\Http\Resources\BookResourceCollection;
 use App\Services\Book\ListBooksService;
 use Illuminate\Http\JsonResponse;
@@ -12,12 +13,12 @@ use Illuminate\Support\Collection;
 
 class ListBooksController
 {
-    private ListBooksService $listBooksService;
+    private ListBooks $listBooksService;
 
     /**
-     * @param ListBooksService $listBooksService
+     * @param ListBooks $listBooksService
      */
-    public function __construct(ListBooksService $listBooksService)
+    public function __construct(ListBooks $listBooksService)
     {
         $this->listBooksService = $listBooksService;
     }
@@ -27,7 +28,7 @@ class ListBooksController
         $perPage = $request->input('perPage', 30);
         $page = $request->input('page');
 
-        $books = $this->listBooksService->list();
+        $books = $this->listBooksService->handle();
 
         $formattedBooks = new BookResourceCollection($books);
 

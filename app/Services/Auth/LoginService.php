@@ -2,7 +2,9 @@
 
 namespace App\Services\Auth;
 
-class LoginService
+use App\Domain\Features\Auth\Login;
+
+class LoginService implements Login
 {
     public function handle(array $credentials): string
     {

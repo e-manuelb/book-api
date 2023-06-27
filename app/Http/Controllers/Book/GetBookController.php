@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Book;
 
+use App\Domain\Features\Book\GetBook;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BookResource;
 use App\Models\Book;
@@ -11,12 +12,12 @@ use Illuminate\Http\Response;
 
 class GetBookController extends Controller
 {
-    private GetBookService $getBookService;
+    private GetBook $getBookService;
 
     /**
-     * @param GetBookService $getBookService
+     * @param GetBook $getBookService
      */
-    public function __construct(GetBookService $getBookService)
+    public function __construct(GetBook $getBookService)
     {
         $this->getBookService = $getBookService;
     }

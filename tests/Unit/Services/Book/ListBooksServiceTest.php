@@ -23,7 +23,7 @@ class ListBooksServiceTest extends TestCase
     {
         $books = Book::factory(20)->create();
 
-        $response = (new ListBooksService($this->bookRepository))->list();
+        $response = (new ListBooksService($this->bookRepository))->handle();
 
         $this->assertCount($books->count(), $response);
     }

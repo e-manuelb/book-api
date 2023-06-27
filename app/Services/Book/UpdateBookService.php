@@ -2,10 +2,11 @@
 
 namespace App\Services\Book;
 
+use App\Domain\Features\Book\UpdateBook;
 use App\Models\Book;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 
-class UpdateBookService
+class UpdateBookService implements UpdateBook
 {
     private BookRepositoryInterface $bookRepository;
 
